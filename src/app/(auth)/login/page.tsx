@@ -14,7 +14,7 @@ import {
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@acbeautyclinic.com.br");
+  const [email, setEmail] = useState("admin@acestetica.com.br");
   const [password, setPassword] = useState("admin123");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ export default function LoginPage() {
     await new Promise((r) => setTimeout(r, 1200));
 
     if (
-      email === "admin@acbeautyclinic.com.br" &&
+      email === "admin@acestetica.com.br" &&
       password === "admin123"
     ) {
       router.push("/dashboard");
@@ -43,49 +43,49 @@ export default function LoginPage() {
     <div className="min-h-screen flex">
       {/* Left Panel - Branding */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-950 via-pink-900 to-rose-800" />
+        {/* Background gradient - rich dark gold */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1a1200 0%, #3d2c00 40%, #2a1f00 100%)" }} />
 
         {/* Pattern overlay */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
 
         {/* Decorative circles */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-pink-500 rounded-full opacity-20 blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-rose-400 rounded-full opacity-20 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-300 rounded-full opacity-10 blur-3xl" />
+        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20 blur-3xl" style={{ backgroundColor: "#C9A84C" }} />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-15 blur-3xl" style={{ backgroundColor: "#D4AF37" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full opacity-10 blur-3xl" style={{ backgroundColor: "#F0D060" }} />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-between w-full p-12">
           {/* Logo area */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
-              <Sparkles className="w-7 h-7 text-white" />
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "rgba(201,168,76,0.2)", backdropFilter: "blur(10px)" }}>
+              <Sparkles className="w-7 h-7 text-yellow-300" />
             </div>
             <div>
-              <h1 className="text-white font-bold text-xl leading-none">AC Beauty Clinic</h1>
-              <p className="text-pink-200 text-sm">Sistema de Gestão</p>
+              <h1 className="text-white font-bold text-xl leading-none">AC Estética</h1>
+              <p className="text-sm" style={{ color: "#D4AF37" }}>Facial e Corporal</p>
             </div>
           </div>
 
           {/* Main content */}
           <div className="space-y-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2">
-                <Shield className="w-4 h-4 text-pink-200" />
-                <span className="text-pink-100 text-sm font-medium">Sistema ERP Profissional</span>
+              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2" style={{ backgroundColor: "rgba(201,168,76,0.15)", backdropFilter: "blur(10px)" }}>
+                <Shield className="w-4 h-4" style={{ color: "#D4AF37" }} />
+                <span className="text-sm font-medium" style={{ color: "#F0D060" }}>Sistema ERP Profissional</span>
               </div>
               <h2 className="text-4xl xl:text-5xl font-bold text-white leading-tight">
                 Gerencie sua clínica com{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-rose-100">
+                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #F0D060, #C9A84C)" }}>
                   excelência
                 </span>
               </h2>
-              <p className="text-pink-200 text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed" style={{ color: "#D4C080" }}>
                 Controle total de agendamentos, clientes, financeiro, estoque e muito mais em um único sistema.
               </p>
             </div>
@@ -102,7 +102,8 @@ export default function LoginPage() {
               ].map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-3 py-2"
+                  className="flex items-center gap-2 rounded-xl px-3 py-2"
+                  style={{ backgroundColor: "rgba(201,168,76,0.12)", backdropFilter: "blur(10px)" }}
                 >
                   <span className="text-sm text-white font-medium">{feature}</span>
                 </div>
@@ -112,12 +113,12 @@ export default function LoginPage() {
 
           {/* Footer */}
           <div>
-            <div className="h-px bg-white/20 mb-4" />
+            <div className="h-px mb-4" style={{ backgroundColor: "rgba(201,168,76,0.3)" }} />
             <div className="flex items-center justify-between">
-              <p className="text-pink-200 text-sm">
+              <p className="text-sm" style={{ color: "#C9A84C" }}>
                 Responsável: <span className="text-white font-medium">Ana Claudia Coutinho</span>
               </p>
-              <p className="text-pink-300 text-xs">v1.0.0</p>
+              <p className="text-xs" style={{ color: "#8B6914" }}>v1.0.0</p>
             </div>
           </div>
         </div>
@@ -128,12 +129,12 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="flex lg:hidden items-center gap-3 mb-8 justify-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(135deg, #D4AF37, #8B6914)" }}>
               <Sparkles className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-xl text-gray-900 leading-none">AC Beauty Clinic</h1>
-              <p className="text-pink-600 text-sm">Sistema de Gestão</p>
+              <h1 className="font-bold text-xl text-gray-900 leading-none">AC Estética</h1>
+              <p className="text-sm" style={{ color: "#8B6914" }}>Facial e Corporal</p>
             </div>
           </div>
 
@@ -159,14 +160,17 @@ export default function LoginPage() {
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-gray-700">E-mail</label>
                 <div className="relative">
-                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-gray-400 w-[18px] h-[18px]" />
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="seu@email.com"
                     required
-                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all duration-200"
+                    style={{ outlineColor: "#C9A84C" }}
+                    onFocus={(e) => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 2px rgba(201,168,76,0.2)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = ""; e.target.style.boxShadow = ""; }}
                   />
                 </div>
               </div>
@@ -182,7 +186,9 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
-                    className="w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                    className="w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all duration-200"
+                    onFocus={(e) => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 2px rgba(201,168,76,0.2)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = ""; e.target.style.boxShadow = ""; }}
                   />
                   <button
                     type="button"
@@ -203,13 +209,15 @@ export default function LoginPage() {
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 rounded border-gray-300 text-pink-500 focus:ring-pink-500"
+                    className="w-4 h-4 rounded border-gray-300"
+                    style={{ accentColor: "#C9A84C" }}
                   />
                   <span className="text-sm text-gray-600">Lembrar de mim</span>
                 </label>
                 <button
                   type="button"
-                  className="text-sm font-medium text-pink-600 hover:text-pink-700 transition-colors"
+                  className="text-sm font-medium transition-colors"
+                  style={{ color: "#8B6914" }}
                 >
                   Esqueci a senha
                 </button>
@@ -219,7 +227,11 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/30 transition-all duration-200 hover:shadow-pink-500/40 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 py-3.5 text-white font-semibold rounded-xl transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                style={{
+                  background: "linear-gradient(135deg, #C9A84C, #8B6914)",
+                  boxShadow: "0 8px 24px rgba(201,168,76,0.35)"
+                }}
               >
                 {loading ? (
                   <>
@@ -236,14 +248,14 @@ export default function LoginPage() {
             </form>
 
             {/* Demo credentials */}
-            <div className="mt-6 p-4 bg-pink-50 border border-pink-100 rounded-xl">
-              <p className="text-xs font-semibold text-pink-700 mb-2">
+            <div className="mt-6 p-4 rounded-xl border" style={{ backgroundColor: "rgba(201,168,76,0.06)", borderColor: "rgba(201,168,76,0.2)" }}>
+              <p className="text-xs font-semibold mb-2" style={{ color: "#6B4F0A" }}>
                 🔑 Credenciais de demonstração:
               </p>
-              <p className="text-xs text-pink-600">
-                Email: <span className="font-mono font-medium">admin@acbeautyclinic.com.br</span>
+              <p className="text-xs" style={{ color: "#8B6914" }}>
+                Email: <span className="font-mono font-medium">admin@acestetica.com.br</span>
               </p>
-              <p className="text-xs text-pink-600">
+              <p className="text-xs" style={{ color: "#8B6914" }}>
                 Senha: <span className="font-mono font-medium">admin123</span>
               </p>
             </div>
@@ -251,7 +263,7 @@ export default function LoginPage() {
 
           {/* Footer */}
           <p className="text-center text-gray-400 text-xs mt-6">
-            © {new Date().getFullYear()} AC Beauty Clinic. Sistema desenvolvido com ❤️
+            © {new Date().getFullYear()} AC Estética - Facial e Corporal · Desenvolvido por Felipe Augusto
           </p>
         </div>
       </div>

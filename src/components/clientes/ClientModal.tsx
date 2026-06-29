@@ -72,7 +72,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
       {/* Modal */}
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="relative bg-gradient-to-r from-rose-950 to-pink-900 p-6 flex-shrink-0">
+        <div className="relative bg-gradient-to-r from-amber-800 to-amber-700 p-6 flex-shrink-0">
           <div className="flex items-center gap-4">
             {/* Avatar */}
             {client?.photo ? (
@@ -91,10 +91,10 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                   <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${getStatusBadgeColor(client.status)}`}>
                     {getStatusLabel(client.status)}
                   </span>
-                  <span className="text-pink-200 text-xs">•</span>
-                  <span className="text-pink-200 text-xs">{calculateAge(client.birthDate)} anos</span>
-                  <span className="text-pink-200 text-xs">•</span>
-                  <span className="text-pink-200 text-xs">Cliente desde {formatDate(client.registrationDate)}</span>
+                  <span className="text-yellow-200 text-xs">•</span>
+                  <span className="text-yellow-200 text-xs">{calculateAge(client.birthDate)} anos</span>
+                  <span className="text-yellow-200 text-xs">•</span>
+                  <span className="text-yellow-200 text-xs">Cliente desde {formatDate(client.registrationDate)}</span>
                 </div>
               )}
             </div>
@@ -136,7 +136,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                 <div key={label} className="flex items-center gap-2 bg-white/10 rounded-xl px-3 py-2">
                   <Icon className={`w-4 h-4 ${color}`} />
                   <div>
-                    <p className="text-[10px] text-pink-200">{label}</p>
+                    <p className="text-[10px] text-yellow-200">{label}</p>
                     <p className="text-white font-bold text-sm">{value}</p>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-1.5 px-4 py-3.5 text-xs font-semibold border-b-2 whitespace-nowrap transition-all ${
                   activeTab === tab.id
-                    ? "border-pink-500 text-pink-600"
+                    ? "border-yellow-500 text-yellow-700"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -173,7 +173,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
               {/* Personal data */}
               <div>
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <User className="w-4 h-4 text-pink-500" />
+                  <User className="w-4 h-4 text-yellow-500" />
                   Dados Pessoais
                 </h3>
                 <div className="space-y-3">
@@ -197,7 +197,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
               {/* Contact */}
               <div>
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-pink-500" />
+                  <Phone className="w-4 h-4 text-yellow-500" />
                   Contato
                 </h3>
                 <div className="space-y-3">
@@ -228,8 +228,8 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                     </div>
                   )}
                   {client.instagram && (
-                    <div className="flex items-center gap-3 p-3 bg-pink-50 rounded-xl">
-                      <Instagram className="w-4 h-4 text-pink-500" />
+                    <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl">
+                      <Instagram className="w-4 h-4 text-yellow-500" />
                       <div>
                         <p className="text-xs text-gray-500">Instagram</p>
                         <p className="text-sm font-semibold text-gray-900">{client.instagram}</p>
@@ -240,7 +240,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
 
                 {/* Address */}
                 <h3 className="font-bold text-gray-900 mt-6 mb-4 flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-pink-500" />
+                  <MapPin className="w-4 h-4 text-yellow-500" />
                   Endereço
                 </h3>
                 <div className="p-3 bg-gray-50 rounded-xl">
@@ -261,16 +261,16 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-bold text-gray-900">Histórico de Atendimentos</h3>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-pink-50 text-pink-600 rounded-xl text-xs font-semibold hover:bg-pink-100 transition-colors">
+                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-yellow-50 text-yellow-700 rounded-xl text-xs font-semibold hover:bg-yellow-100 transition-colors">
                   <Calendar className="w-3.5 h-3.5" />
                   Novo Agendamento
                 </button>
               </div>
               <div className="space-y-3">
                 {mockHistory.map((h, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-pink-200 transition-colors">
-                    <div className="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Calendar className="w-5 h-5 text-pink-500" />
+                  <div key={idx} className="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-yellow-300 transition-colors">
+                    <div className="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Calendar className="w-5 h-5 text-yellow-500" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-gray-900 truncate">{h.service}</p>
@@ -289,10 +289,10 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
 
           {activeTab === "anamnese" && (
             <div className="text-center py-12">
-              <Heart className="w-12 h-12 text-pink-200 mx-auto mb-3" />
+              <Heart className="w-12 h-12 text-yellow-200 mx-auto mb-3" />
               <h3 className="font-bold text-gray-700 mb-1">Ficha de Anamnese</h3>
               <p className="text-gray-400 text-sm mb-4">Preencha a ficha de anamnese completa da cliente</p>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-pink-500/20">
+              <button className="px-6 py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-yellow-500/20">
                 Preencher Anamnese
               </button>
             </div>
@@ -302,7 +302,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-bold text-gray-900">Galeria de Fotos</h3>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-pink-50 text-pink-600 rounded-xl text-xs font-semibold hover:bg-pink-100 transition-colors">
+                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-yellow-50 text-yellow-700 rounded-xl text-xs font-semibold hover:bg-yellow-100 transition-colors">
                   <Camera className="w-3.5 h-3.5" />
                   Upload Foto
                 </button>
@@ -322,7 +322,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-bold text-gray-900">Pacotes Adquiridos</h3>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-pink-50 text-pink-600 rounded-xl text-xs font-semibold hover:bg-pink-100 transition-colors">
+                <button className="flex items-center gap-1.5 px-3 py-1.5 bg-yellow-50 text-yellow-700 rounded-xl text-xs font-semibold hover:bg-yellow-100 transition-colors">
                   <Package className="w-3.5 h-3.5" />
                   Novo Pacote
                 </button>
@@ -339,7 +339,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                   <div className="flex gap-4">
                     {[
                       { label: "Total", value: 8, color: "bg-gray-200" },
-                      { label: "Realizadas", value: 3, color: "bg-pink-500" },
+                      { label: "Realizadas", value: 3, color: "bg-yellow-500" },
                       { label: "Restantes", value: 5, color: "bg-green-400" },
                     ].map(({ label, value, color }) => (
                       <div key={label} className="text-center">
@@ -356,7 +356,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
                       <span>3/8 sessões</span>
                     </div>
                     <div className="h-2 bg-gray-100 rounded-full">
-                      <div className="h-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500" style={{ width: "37.5%" }} />
+                      <div className="h-2 rounded-full bg-gradient-to-r from-yellow-500 to-amber-500" style={{ width: "37.5%" }} />
                     </div>
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
               <h3 className="font-bold text-gray-900 mb-4">Histórico Financeiro</h3>
               <div className="grid grid-cols-3 gap-3 mb-4">
                 {[
-                  { label: "Total Gasto", value: formatCurrency(1930), color: "text-pink-600", bg: "bg-pink-50" },
+                  { label: "Total Gasto", value: formatCurrency(1930), color: "text-yellow-700", bg: "bg-yellow-50" },
                   { label: "Em Aberto", value: formatCurrency(0), color: "text-amber-600", bg: "bg-amber-50" },
                   { label: "Cashback", value: formatCurrency(client?.cashbackBalance || 0), color: "text-green-600", bg: "bg-green-50" },
                 ].map(({ label, value, color, bg }) => (
@@ -401,7 +401,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
               <FileText className="w-12 h-12 text-gray-200 mx-auto mb-3" />
               <h3 className="font-bold text-gray-700 mb-1">Documentos</h3>
               <p className="text-gray-400 text-sm mb-4">Contratos, termos, receitas e outros documentos</p>
-              <button className="px-6 py-2.5 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl text-sm font-semibold hover:border-pink-300 hover:text-pink-500 transition-colors">
+              <button className="px-6 py-2.5 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl text-sm font-semibold hover:border-yellow-400 hover:text-yellow-500 transition-colors">
                 + Adicionar Documento
               </button>
             </div>
@@ -417,7 +417,7 @@ export default function ClientModal({ client, mode, onClose }: ClientModalProps)
             >
               Cancelar
             </button>
-            <button className="px-5 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-pink-500/20 hover:from-pink-700 hover:to-rose-700 transition-all">
+            <button className="px-5 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-yellow-500/20 hover:from-yellow-700 hover:to-amber-900 transition-all">
               {mode === "create" ? "Cadastrar Cliente" : "Salvar Alterações"}
             </button>
           </div>

@@ -9,11 +9,11 @@ import { formatPhone } from "@/lib/utils";
 
 const templates = [
   { id: "t1", name: "Confirmação de Agendamento", category: "Agenda", variables: ["cliente", "servico", "data", "hora"], active: true,
-    text: "Olá {cliente}! ✨ Confirmamos seu agendamento para *{servico}* no dia {data} às {hora}. Aguardamos você! 💕 AC Beauty Clinic" },
+    text: "Olá {cliente}! ✨ Confirmamos seu agendamento para *{servico}* no dia {data} às {hora}. Aguardamos você! 💕 AC Estética - Facial e Corporal" },
   { id: "t2", name: "Lembrete 24h antes", category: "Agenda", variables: ["cliente", "servico", "data", "hora"], active: true,
-    text: "Oi {cliente}! 🌸 Lembrando que amanhã você tem *{servico}* às {hora}. Caso precise remarcar, entre em contato. Até amanhã! AC Beauty Clinic" },
+    text: "Oi {cliente}! 🌸 Lembrando que amanhã você tem *{servico}* às {hora}. Caso precise remarcar, entre em contato. Até amanhã! AC Estética - Facial e Corporal" },
   { id: "t3", name: "Aniversário", category: "Relacionamento", variables: ["cliente"], active: true,
-    text: "Feliz aniversário, {cliente}! 🎉🎂 A AC Beauty Clinic te deseja um lindo dia! Como presente, você ganhou 10% de desconto na sua próxima visita. 💝" },
+    text: "Feliz aniversário, {cliente}! 🎉🎂 A AC Estética - Facial e Corporal te deseja um lindo dia! Como presente, você ganhou 10% de desconto na sua próxima visita. 💝" },
   { id: "t4", name: "Pacote Vencendo", category: "Fidelização", variables: ["cliente", "pacote", "sessoes", "dias"], active: true,
     text: "Oi {cliente}! Seu pacote *{pacote}* está vencendo em {dias} dias e ainda tem {sessoes} sessões para usar. Vamos agendar? 💕" },
   { id: "t5", name: "Retorno de Inativo", category: "Relacionamento", variables: ["cliente"], active: false,
@@ -229,8 +229,8 @@ export default function WhatsAppPage() {
                   <label className="text-sm font-semibold text-gray-700">Selecionar Destinatários</label>
                   <div className="space-y-2">
                     {["Todos os clientes ativos", "Aniversariantes do mês", "Clientes com pacotes vencendo", "Clientes inativos", "Segmento personalizado"].map(opt => (
-                      <label key={opt} className="flex items-center gap-3 p-3 border border-gray-100 rounded-xl hover:border-pink-200 cursor-pointer transition-colors">
-                        <input type="checkbox" className="w-4 h-4 accent-pink-500" />
+                      <label key={opt} className="flex items-center gap-3 p-3 border border-gray-100 rounded-xl hover:border-yellow-300 cursor-pointer transition-colors">
+                        <input type="checkbox" className="w-4 h-4 accent-yellow-600" />
                         <span className="text-sm text-gray-700">{opt}</span>
                       </label>
                     ))}
@@ -238,11 +238,11 @@ export default function WhatsAppPage() {
                 </div>
                 <div className="space-y-3">
                   <label className="text-sm font-semibold text-gray-700">Modelo de Mensagem</label>
-                  <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all">
+                  <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all">
                     {templates.map(t => <option key={t.id}>{t.name}</option>)}
                   </select>
                   <label className="text-sm font-semibold text-gray-700">Ou mensagem personalizada</label>
-                  <textarea rows={5} placeholder="Digite a mensagem..." className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                  <textarea rows={5} placeholder="Digite a mensagem..." className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
                   <div className="flex gap-3">
                     <button className="flex-1 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">
                       Pré-visualizar

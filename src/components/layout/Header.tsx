@@ -106,7 +106,8 @@ export default function Header({ onMenuClick }: HeaderProps) {
           <input
             type="text"
             placeholder="Buscar clientes, agendamentos..."
-            className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+            className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-yellow-400 transition-all"
+            style={{ "--tw-ring-color": "rgba(201,168,76,0.2)" } as React.CSSProperties}
           />
           <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded font-mono hidden lg:block">
             ⌘K
@@ -142,14 +143,14 @@ export default function Header({ onMenuClick }: HeaderProps) {
             className="p-2 rounded-xl text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors relative"
           >
             <Bell className="w-5 h-5" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-pink-500 rounded-full" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full" style={{ backgroundColor: "#C9A84C" }} />
           </button>
 
           {notifOpen && (
             <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-2xl shadow-2xl shadow-gray-200 border border-gray-100 z-50 overflow-hidden">
               <div className="p-4 border-b border-gray-100 flex items-center justify-between">
                 <h3 className="font-semibold text-gray-900">Notificações</h3>
-                <span className="text-xs bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full font-medium">
+                <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ backgroundColor: "rgba(201,168,76,0.15)", color: "#8B6914" }}>
                   {notifications.length} novas
                 </span>
               </div>
@@ -174,7 +175,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
                 })}
               </div>
               <div className="p-3 border-t border-gray-100">
-                <button className="w-full text-center text-xs font-medium text-pink-600 hover:text-pink-700 py-1 transition-colors">
+                <button className="w-full text-center text-xs font-medium py-1 transition-colors" style={{ color: "#8B6914" }}>
                   Ver todas as notificações
                 </button>
               </div>
@@ -191,7 +192,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
             }}
             className="flex items-center gap-2 pl-1 pr-2 py-1 rounded-xl hover:bg-gray-100 transition-colors"
           >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white text-xs font-bold shadow-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xs font-bold shadow-sm flex-shrink-0" style={{ background: "linear-gradient(135deg, #D4AF37, #8B6914)" }}>
               AC
             </div>
             <div className="hidden lg:block text-left">
@@ -206,7 +207,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
               <div className="p-4 border-b border-gray-100">
                 <p className="text-sm font-semibold text-gray-900">Ana Claudia Coutinho</p>
                 <p className="text-xs text-gray-500">Administradora</p>
-                <p className="text-xs text-gray-400 mt-0.5">ana@acbeautyclinic.com.br</p>
+                <p className="text-xs text-gray-400 mt-0.5">ana@acestetica.com.br</p>
               </div>
               <div className="p-2">
                 {[

@@ -156,7 +156,7 @@ export default function FinanceiroPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-4 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
                   activeTab === tab.id
-                    ? "border-pink-500 text-pink-600"
+                    ? "border-yellow-500 text-yellow-700"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -228,7 +228,7 @@ export default function FinanceiroPage() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-bold text-gray-900">Últimas Transações</h3>
-                <button className="text-xs font-semibold text-pink-600 hover:text-pink-700">Ver todas</button>
+                <button className="text-xs font-semibold text-yellow-700 hover:text-yellow-800">Ver todas</button>
               </div>
               <TransactionList transactions={mockTransactions.slice(0, 6)} />
             </div>
@@ -247,7 +247,7 @@ export default function FinanceiroPage() {
                   placeholder="Buscar..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all"
                 />
               </div>
               <div className="flex bg-gray-100 rounded-xl p-0.5">
@@ -390,13 +390,13 @@ export default function FinanceiroPage() {
                   <input
                     type={type}
                     placeholder={placeholder}
-                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all"
                   />
                 </div>
               ))}
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-gray-700">Categoria</label>
-                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all">
+                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all">
                   {modalType === "income"
                     ? ["Serviços", "Pacotes", "Produtos", "Outros"].map((c) => <option key={c}>{c}</option>)
                     : ["Fornecedores", "Aluguel", "Salários", "Marketing", "Manutenção", "Outros"].map((c) => <option key={c}>{c}</option>)}
@@ -406,7 +406,7 @@ export default function FinanceiroPage() {
                 <button onClick={() => setModalOpen(false)} className="flex-1 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">
                   Cancelar
                 </button>
-                <button className="flex-1 py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-pink-500/20 hover:from-pink-700 hover:to-rose-700 transition-all">
+                <button className="flex-1 py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-yellow-500/20 hover:from-yellow-700 hover:to-amber-900 transition-all">
                   Salvar
                 </button>
               </div>

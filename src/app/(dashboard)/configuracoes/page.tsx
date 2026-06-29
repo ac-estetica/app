@@ -38,7 +38,7 @@ export default function ConfiguracoesPage() {
               onClick={() => setActiveTab(id)}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                 activeTab === id
-                  ? "bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-500/20"
+                  ? "bg-gradient-to-r from-yellow-600 to-amber-600 text-white shadow-md shadow-yellow-500/20"
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
               }`}
             >
@@ -55,18 +55,18 @@ export default function ConfiguracoesPage() {
           <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="font-bold text-gray-900 text-lg">Dados da Clínica</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
                 <Save className="w-4 h-4" /> Salvar
               </button>
             </div>
 
             {/* Logo upload */}
             <div className="flex items-center gap-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
                 <span className="text-white text-3xl font-bold">AC</span>
               </div>
               <div>
-                <button className="px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-500 hover:border-pink-400 hover:text-pink-500 transition-colors">
+                <button className="px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-500 hover:border-yellow-400 hover:text-yellow-500 transition-colors">
                   Carregar Logo
                 </button>
                 <p className="text-xs text-gray-400 mt-1">PNG ou SVG, máx. 2MB, fundo transparente</p>
@@ -75,11 +75,11 @@ export default function ConfiguracoesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { label: "Nome da Empresa", value: "AC Beauty Clinic", placeholder: "Nome da empresa" },
-                { label: "Nome Fantasia", value: "AC Beauty", placeholder: "Nome fantasia" },
+                { label: "Nome da Empresa", value: "AC Estética - Facial e Corporal", placeholder: "Nome da empresa" },
+                { label: "Nome Fantasia", value: "AC Estética", placeholder: "Nome fantasia" },
                 { label: "CNPJ", value: "12.345.678/0001-90", placeholder: "00.000.000/0001-00" },
                 { label: "Responsável Técnica", value: "Ana Claudia Coutinho", placeholder: "Nome completo" },
-                { label: "E-mail", value: "contato@acbeautyclinic.com.br", placeholder: "email@empresa.com" },
+                { label: "E-mail", value: "contato@acestetica.com.br", placeholder: "email@empresa.com" },
                 { label: "WhatsApp", value: "(11) 99999-0000", placeholder: "(00) 00000-0000" },
                 { label: "Telefone", value: "(11) 4444-5555", placeholder: "(00) 0000-0000" },
                 { label: "Instagram", value: "@acbeautyclinic", placeholder: "@perfil" },
@@ -90,7 +90,7 @@ export default function ConfiguracoesPage() {
                     type="text"
                     defaultValue={value}
                     placeholder={placeholder}
-                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all"
                   />
                 </div>
               ))}
@@ -100,12 +100,12 @@ export default function ConfiguracoesPage() {
               <label className="text-sm font-semibold text-gray-700">Endereço Completo</label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
                 <div className="md:col-span-2 space-y-1.5">
-                  <input type="text" defaultValue="Rua das Rosas" placeholder="Rua/Av." className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                  <input type="text" defaultValue="Rua das Rosas" placeholder="Rua/Av." className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
                 </div>
-                <input type="text" defaultValue="123" placeholder="Número" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
-                <input type="text" defaultValue="Jardins" placeholder="Bairro" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
-                <input type="text" defaultValue="São Paulo" placeholder="Cidade" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
-                <input type="text" defaultValue="01452-000" placeholder="CEP" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                <input type="text" defaultValue="123" placeholder="Número" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
+                <input type="text" defaultValue="Jardins" placeholder="Bairro" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
+                <input type="text" defaultValue="São Paulo" placeholder="Cidade" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
+                <input type="text" defaultValue="01452-000" placeholder="CEP" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
               </div>
             </div>
           </div>
@@ -115,23 +115,23 @@ export default function ConfiguracoesPage() {
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <div className="flex items-center justify-between mb-5">
               <h2 className="font-bold text-gray-900 text-lg">Perfis de Acesso</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
                 <Users className="w-4 h-4" /> Novo Usuário
               </button>
             </div>
             <div className="space-y-3">
               {userProfiles.map((profile) => (
-                <div key={profile.id} className="border border-gray-100 rounded-xl p-4 hover:border-pink-200 transition-colors">
+                <div key={profile.id} className="border border-gray-100 rounded-xl p-4 hover:border-yellow-300 transition-colors">
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <h3 className="font-bold text-gray-900">{profile.name}</h3>
                       <p className="text-xs text-gray-500">{profile.description}</p>
                     </div>
-                    <button className="text-xs text-pink-600 hover:text-pink-700 font-semibold">Editar permissões</button>
+                    <button className="text-xs text-yellow-700 hover:text-yellow-800 font-semibold">Editar permissões</button>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {profile.permissions.map(p => (
-                      <span key={p} className="text-[11px] bg-pink-50 text-pink-700 px-2 py-0.5 rounded-lg font-medium">{p}</span>
+                      <span key={p} className="text-[11px] bg-yellow-50 text-yellow-800 px-2 py-0.5 rounded-lg font-medium">{p}</span>
                     ))}
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function ConfiguracoesPage() {
               <label className="text-sm font-semibold text-gray-700 mb-2 block">Modo</label>
               <div className="flex gap-3">
                 {["Claro", "Escuro", "Automático"].map(mode => (
-                  <button key={mode} className={`px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all ${mode === "Claro" ? "border-pink-500 text-pink-600 bg-pink-50" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
+                  <button key={mode} className={`px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all ${mode === "Claro" ? "border-yellow-500 text-yellow-700 bg-yellow-50" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
                     {mode === "Claro" ? "☀️" : mode === "Escuro" ? "🌙" : "🌓"} {mode}
                   </button>
                 ))}
@@ -184,7 +184,7 @@ export default function ConfiguracoesPage() {
               <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">✓ Sucesso</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button className="p-4 border-2 border-dashed border-gray-300 rounded-xl hover:border-pink-400 hover:bg-pink-50 transition-all text-center">
+              <button className="p-4 border-2 border-dashed border-gray-300 rounded-xl hover:border-yellow-400 hover:bg-yellow-50 transition-all text-center">
                 <Database className="w-8 h-8 text-gray-400 mx-auto mb-2" />
                 <p className="text-sm font-semibold text-gray-700">Fazer Backup Agora</p>
                 <p className="text-xs text-gray-400">Exportar todos os dados</p>

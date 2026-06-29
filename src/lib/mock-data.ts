@@ -17,7 +17,7 @@ export const mockProfessionals: Professional[] = [
   {
     id: "p1",
     name: "Ana Claudia Coutinho",
-    email: "ana@acbeautyclinic.com.br",
+    email: "ana@acestetica.com.br",
     phone: "(11) 99999-0001",
     whatsapp: "(11) 99999-0001",
     role: "Esteticista Chefe",
@@ -25,7 +25,7 @@ export const mockProfessionals: Professional[] = [
     commissionType: "percentage",
     commissionValue: 40,
     active: true,
-    color: "#ec4899",
+    color: "#C9A84C",
     schedule: {
       monday: [{ start: "08:00", end: "18:00" }],
       tuesday: [{ start: "08:00", end: "18:00" }],
@@ -39,7 +39,7 @@ export const mockProfessionals: Professional[] = [
   {
     id: "p2",
     name: "Mariana Santos",
-    email: "mariana@acbeautyclinic.com.br",
+    email: "mariana@acestetica.com.br",
     phone: "(11) 99999-0002",
     whatsapp: "(11) 99999-0002",
     role: "Esteticista",
@@ -61,7 +61,7 @@ export const mockProfessionals: Professional[] = [
   {
     id: "p3",
     name: "Fernanda Lima",
-    email: "fernanda@acbeautyclinic.com.br",
+    email: "fernanda@acestetica.com.br",
     phone: "(11) 99999-0003",
     whatsapp: "(11) 99999-0003",
     role: "Auxiliar Estética",
@@ -257,7 +257,7 @@ export const mockServices: Service[] = [
     commission: 35,
     professionalIds: ["p1", "p2"],
     active: true,
-    color: "#ec4899",
+    color: "#C9A84C",
   },
   {
     id: "s2",
@@ -429,7 +429,7 @@ export const mockAppointments: Appointment[] = [
     startTime: "09:00",
     endTime: "10:30",
     status: "confirmed",
-    color: "#ec4899",
+    color: "#C9A84C",
     reminderSent: true,
     confirmationSent: true,
     notes: "Cliente prefere produtos sem fragrância",
@@ -860,7 +860,7 @@ export const clientGrowthData = [
 ];
 
 export const serviceDistributionData = [
-  { name: "Facial", value: 42, color: "#ec4899" },
+  { name: "Facial", value: 42, color: "#C9A84C" },
   { name: "Corporal", value: 28, color: "#8b5cf6" },
   { name: "Depilação", value: 16, color: "#06b6d4" },
   { name: "Especiais", value: 10, color: "#f59e0b" },

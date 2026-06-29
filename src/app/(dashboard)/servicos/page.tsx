@@ -19,12 +19,12 @@ export default function ServicosPage() {
   });
 
   const serviceColors: Record<string, string> = {
-    "#ec4899": "from-pink-500 to-rose-500",
+    "#ec4899": "from-yellow-500 to-amber-500",
     "#8b5cf6": "from-violet-500 to-purple-500",
     "#f59e0b": "from-amber-400 to-orange-500",
     "#06b6d4": "from-cyan-500 to-blue-500",
     "#10b981": "from-emerald-500 to-green-500",
-    "#ef4444": "from-red-500 to-rose-600",
+    "#ef4444": "from-red-500 to-amber-900",
     "#6366f1": "from-indigo-500 to-violet-500",
     "#84cc16": "from-lime-500 to-green-500",
   };
@@ -34,7 +34,7 @@ export default function ServicosPage() {
       {/* Summary cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Total de Serviços", value: mockServices.length, icon: Scissors, color: "text-pink-600", bg: "bg-pink-50" },
+          { label: "Total de Serviços", value: mockServices.length, icon: Scissors, color: "text-yellow-700", bg: "bg-yellow-50" },
           { label: "Serviços Ativos", value: mockServices.filter((s) => s.active).length, icon: Star, color: "text-green-600", bg: "bg-green-50" },
           { label: "Ticket Médio", value: formatCurrency(mockServices.reduce((a, s) => a + s.price, 0) / mockServices.length), icon: DollarSign, color: "text-blue-600", bg: "bg-blue-50" },
           { label: "Duração Média", value: formatMinutes(Math.floor(mockServices.reduce((a, s) => a + s.duration, 0) / mockServices.length)), icon: Clock, color: "text-violet-600", bg: "bg-violet-50" },
@@ -61,7 +61,7 @@ export default function ServicosPage() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input type="text" placeholder="Buscar serviço..." value={search} onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all w-52" />
+              className="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all w-52" />
           </div>
           <div className="flex bg-gray-100 rounded-xl p-0.5 overflow-x-auto">
             {categories.map((cat) => (
@@ -72,14 +72,14 @@ export default function ServicosPage() {
             ))}
           </div>
           <button onClick={() => setModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
             <Plus className="w-4 h-4" /> Novo Serviço
           </button>
         </div>
 
         <div className="p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {filtered.map((service) => {
-            const gradientClass = serviceColors[service.color || "#ec4899"] || "from-pink-500 to-rose-500";
+            const gradientClass = serviceColors[service.color || "#ec4899"] || "from-yellow-500 to-amber-500";
             return (
               <div key={service.id} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md hover:border-gray-200 transition-all group">
                 {/* Color bar */}

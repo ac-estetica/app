@@ -199,7 +199,7 @@ export default function AgendaPage() {
               setSelectedAppointment(null);
               setModalOpen(true);
             }}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20"
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20"
           >
             <Plus className="w-4 h-4" />
             <span className="hidden sm:inline">Novo Agendamento</span>
@@ -220,12 +220,12 @@ export default function AgendaPage() {
                 return (
                   <div
                     key={idx}
-                    className={`p-3 text-center border-l border-gray-100 ${isToday ? "bg-pink-50" : ""}`}
+                    className={`p-3 text-center border-l border-gray-100 ${isToday ? "bg-yellow-50" : ""}`}
                   >
                     <p className="text-[10px] font-bold text-gray-400 uppercase">{DAYS[idx]}</p>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto mt-1 ${
                       isToday
-                        ? "bg-gradient-to-br from-pink-500 to-rose-600 text-white"
+                        ? "bg-gradient-to-br from-yellow-500 to-amber-600 text-white"
                         : "text-gray-900"
                     }`}>
                       <span className="text-sm font-bold">{day.getDate()}</span>
@@ -267,7 +267,7 @@ export default function AgendaPage() {
                         <div
                           key={dayIdx}
                           className={`relative border-l border-gray-100 min-h-[56px] group cursor-pointer ${
-                            isToday ? "bg-pink-50/40" : "hover:bg-gray-50"
+                            isToday ? "bg-yellow-50/40" : "hover:bg-gray-50"
                           }`}
                           onClick={() => {
                             setSelectedAppointment(null);
@@ -276,8 +276,8 @@ export default function AgendaPage() {
                         >
                           {/* New appointment hint */}
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div className="absolute top-1 left-1 right-1 h-6 bg-pink-100 border border-pink-200 border-dashed rounded-lg flex items-center justify-center">
-                              <Plus className="w-3 h-3 text-pink-400" />
+                            <div className="absolute top-1 left-1 right-1 h-6 bg-yellow-100 border border-yellow-300 border-dashed rounded-lg flex items-center justify-center">
+                              <Plus className="w-3 h-3 text-yellow-500" />
                             </div>
                           </div>
 
@@ -329,7 +329,7 @@ export default function AgendaPage() {
                 filteredAppointments.map((apt) => (
                   <div
                     key={apt.id}
-                    className="flex items-center gap-4 p-4 border border-gray-100 rounded-2xl hover:border-pink-200 hover:shadow-sm transition-all cursor-pointer group"
+                    className="flex items-center gap-4 p-4 border border-gray-100 rounded-2xl hover:border-yellow-300 hover:shadow-sm transition-all cursor-pointer group"
                     onClick={() => {
                       setSelectedAppointment(apt);
                       setModalOpen(true);
@@ -348,7 +348,7 @@ export default function AgendaPage() {
                     </div>
 
                     {/* Client */}
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-900 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                       {apt.clientName[0]}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -412,9 +412,9 @@ export default function AgendaPage() {
                     </div>
                     <div className="flex-1 border-t border-gray-100 pt-1">
                       {apts.length === 0 ? (
-                        <div className="h-12 rounded-xl border-2 border-dashed border-gray-100 flex items-center justify-center cursor-pointer hover:border-pink-200 hover:bg-pink-50 transition-all group"
+                        <div className="h-12 rounded-xl border-2 border-dashed border-gray-100 flex items-center justify-center cursor-pointer hover:border-yellow-300 hover:bg-yellow-50 transition-all group"
                           onClick={() => { setSelectedAppointment(null); setModalOpen(true); }}>
-                          <Plus className="w-4 h-4 text-gray-300 group-hover:text-pink-400 transition-colors" />
+                          <Plus className="w-4 h-4 text-gray-300 group-hover:text-yellow-500 transition-colors" />
                         </div>
                       ) : (
                         <div className="space-y-1">

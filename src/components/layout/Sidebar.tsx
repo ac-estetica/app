@@ -189,12 +189,15 @@ export default function Sidebar({ open, mobileOpen, onMobileClose }: SidebarProp
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-800">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-pink-500/30">
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
+              style={{ background: "linear-gradient(135deg, #D4AF37, #8B6914)", boxShadow: "0 4px 15px rgba(201,168,76,0.3)" }}
+            >
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-white font-bold text-sm leading-none">AC Beauty</h1>
-              <p className="text-gray-400 text-xs">Clinic</p>
+              <h1 className="text-white font-bold text-sm leading-none">AC Estética</h1>
+              <p className="text-gray-400 text-xs">Facial e Corporal</p>
             </div>
           </div>
           <button
@@ -221,15 +224,18 @@ function SidebarContent({
     <div className="flex flex-col h-full overflow-hidden">
       {/* Logo */}
       <div className="flex items-center gap-3 p-4 border-b border-gray-800">
-        <div className="w-9 h-9 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-pink-500/20">
+        <div
+          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+          style={{ background: "linear-gradient(135deg, #D4AF37, #8B6914)", boxShadow: "0 4px 12px rgba(201,168,76,0.25)" }}
+        >
           <Sparkles className="w-5 h-5 text-white" />
         </div>
         {open && (
           <div className="min-w-0">
             <h1 className="text-white font-bold text-sm leading-none truncate">
-              AC Beauty Clinic
+              AC Estética
             </h1>
-            <p className="text-gray-500 text-xs truncate">Sistema de Gestão</p>
+            <p className="text-gray-500 text-xs truncate">Facial e Corporal</p>
           </div>
         )}
       </div>
@@ -258,9 +264,13 @@ function SidebarContent({
                   className={cn(
                     "flex items-center gap-3 px-3 py-2 mx-2 rounded-xl transition-all duration-150 group relative",
                     isActive
-                      ? "bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-500/20"
+                      ? "text-white shadow-md"
                       : "text-gray-400 hover:bg-gray-800 hover:text-gray-100"
                   )}
+                  style={isActive ? {
+                    background: "linear-gradient(135deg, #C9A84C, #8B6914)",
+                    boxShadow: "0 4px 12px rgba(201,168,76,0.25)"
+                  } : undefined}
                 >
                   <Icon
                     className={cn(
@@ -278,8 +288,9 @@ function SidebarContent({
                             "text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center",
                             isActive
                               ? "bg-white/20 text-white"
-                              : "bg-pink-500/20 text-pink-400"
+                              : "text-yellow-600"
                           )}
+                          style={!isActive ? { backgroundColor: "rgba(201,168,76,0.15)" } : undefined}
                         >
                           {item.badge}
                         </span>
@@ -295,7 +306,7 @@ function SidebarContent({
                     <div className="absolute left-full ml-2 px-2 py-1 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 border border-gray-700">
                       {item.label}
                       {item.badge && (
-                        <span className="ml-1.5 bg-pink-500 text-white text-[10px] px-1 rounded-full">
+                        <span className="ml-1.5 text-white text-[10px] px-1 rounded-full" style={{ backgroundColor: "#C9A84C" }}>
                           {item.badge}
                         </span>
                       )}
@@ -316,7 +327,10 @@ function SidebarContent({
             !open && "justify-center"
           )}
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0 text-white text-xs font-bold shadow-sm">
+          <div
+            className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xs font-bold shadow-sm"
+            style={{ background: "linear-gradient(135deg, #D4AF37, #8B6914)" }}
+          >
             AC
           </div>
           {open && (
@@ -326,6 +340,11 @@ function SidebarContent({
             </div>
           )}
         </div>
+        {open && (
+          <p className="text-gray-700 text-[9px] text-center mt-2 leading-tight">
+            Desenvolvido por Felipe Augusto
+          </p>
+        )}
       </div>
     </div>
   );

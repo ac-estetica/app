@@ -13,7 +13,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, string> = {
-  cosmetic: "bg-pink-100 text-pink-700",
+  cosmetic: "bg-yellow-100 text-yellow-800",
   material: "bg-blue-100 text-blue-700",
   disposable: "bg-amber-100 text-amber-700",
   equipment: "bg-violet-100 text-violet-700",
@@ -37,7 +37,7 @@ export default function EstoquePage() {
       {/* Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Total de Itens", value: mockProducts.length, icon: Archive, color: "text-pink-600", bg: "bg-pink-50" },
+          { label: "Total de Itens", value: mockProducts.length, icon: Archive, color: "text-yellow-700", bg: "bg-yellow-50" },
           { label: "Estoque Baixo", value: lowStock.length, icon: AlertTriangle, color: "text-red-500", bg: "bg-red-50" },
           { label: "Valor Total", value: formatCurrency(totalValue), icon: DollarSign, color: "text-green-600", bg: "bg-green-50" },
           { label: "Movimentações Mês", value: 48, icon: TrendingDown, color: "text-blue-600", bg: "bg-blue-50" },
@@ -81,7 +81,7 @@ export default function EstoquePage() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input type="text" placeholder="Buscar produto..." value={search} onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all w-52" />
+              className="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all w-52" />
           </div>
           <div className="flex bg-gray-100 rounded-xl p-0.5">
             {[
@@ -96,7 +96,7 @@ export default function EstoquePage() {
               </button>
             ))}
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+          <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
             <Plus className="w-4 h-4" /> Novo Produto
           </button>
         </div>

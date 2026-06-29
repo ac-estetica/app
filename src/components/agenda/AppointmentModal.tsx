@@ -109,7 +109,7 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
             <div className="space-y-4">
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-gray-700">Cliente</label>
-                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all">
+                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all">
                   <option value="">Selecione um cliente...</option>
                   {mockClients.map((c) => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -119,7 +119,7 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
 
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-gray-700">Serviço</label>
-                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all">
+                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all">
                   <option value="">Selecione um serviço...</option>
                   {mockServices.map((s) => (
                     <option key={s.id} value={s.id}>{s.name}</option>
@@ -129,7 +129,7 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
 
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-gray-700">Profissional</label>
-                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all">
+                <select className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all">
                   <option value="">Selecione a profissional...</option>
                   {mockProfessionals.map((p) => (
                     <option key={p.id} value={p.id}>{p.name}</option>
@@ -140,15 +140,15 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
               <div className="grid grid-cols-3 gap-3">
                 <div className="col-span-1 space-y-1.5">
                   <label className="text-sm font-semibold text-gray-700">Data</label>
-                  <input type="date" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                  <input type="date" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-semibold text-gray-700">Início</label>
-                  <input type="time" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                  <input type="time" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-semibold text-gray-700">Fim</label>
-                  <input type="time" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all" />
+                  <input type="time" className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all" />
                 </div>
               </div>
 
@@ -157,7 +157,7 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
                 <textarea
                   rows={2}
                   placeholder="Observações do agendamento..."
-                  className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+                  className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function AppointmentModal({ appointment, onClose }: AppointmentMo
                 <button onClick={onClose} className="flex-1 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">
                   Cancelar
                 </button>
-                <button className="flex-1 py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-pink-500/20 hover:from-pink-700 hover:to-rose-700 transition-all">
+                <button className="flex-1 py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-yellow-500/20 hover:from-yellow-700 hover:to-amber-900 transition-all">
                   Agendar
                 </button>
               </div>

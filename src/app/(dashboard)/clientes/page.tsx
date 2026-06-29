@@ -44,14 +44,14 @@ const tagColors: Record<string, string> = {
   Regular: "bg-blue-100 text-blue-700",
   Novo: "bg-violet-100 text-violet-700",
   Inativo: "bg-gray-100 text-gray-500",
-  "Top Cliente": "bg-rose-100 text-rose-700",
+  "Top Cliente": "bg-amber-100 text-amber-700",
 };
 
 const summaryCards = [
   { label: "Total de Clientes", value: 284, icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
   { label: "Clientes Ativos", value: 231, icon: UserCheck, color: "text-green-600", bg: "bg-green-50" },
   { label: "Clientes Inativos", value: 53, icon: UserX, color: "text-gray-500", bg: "bg-gray-100" },
-  { label: "Aniversariantes do Mês", value: 8, icon: Gift, color: "text-pink-600", bg: "bg-pink-50" },
+  { label: "Aniversariantes do Mês", value: 8, icon: Gift, color: "text-yellow-700", bg: "bg-yellow-50" },
 ];
 
 export default function ClientesPage() {
@@ -116,7 +116,7 @@ export default function ClientesPage() {
                   placeholder="Buscar cliente..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-300 transition-all"
+                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-400 transition-all"
                 />
               </div>
 
@@ -149,7 +149,7 @@ export default function ClientesPage() {
                   setSelectedClient(null);
                   setModalOpen(true);
                 }}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20"
               >
                 <UserPlus className="w-4 h-4" />
                 <span className="hidden sm:inline">Novo Cliente</span>
@@ -164,7 +164,7 @@ export default function ClientesPage() {
             {filteredClients.map((client) => (
               <div
                 key={client.id}
-                className="relative group border border-gray-100 rounded-2xl p-4 hover:border-pink-200 hover:shadow-md transition-all duration-200 cursor-pointer"
+                className="relative group border border-gray-100 rounded-2xl p-4 hover:border-yellow-300 hover:shadow-md transition-all duration-200 cursor-pointer"
                 onClick={() => openClient(client, "view")}
               >
                 {/* Top row */}
@@ -178,7 +178,7 @@ export default function ClientesPage() {
                         className="w-12 h-12 rounded-xl object-cover"
                       />
                     ) : (
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white font-bold text-base">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-900 flex items-center justify-center text-white font-bold text-base">
                         {getInitials(client.name)}
                       </div>
                     )}
@@ -284,7 +284,7 @@ export default function ClientesPage() {
                     <p className="text-[10px] font-semibold text-gray-600">{formatDate(client.registrationDate)}</p>
                   </div>
 
-                  <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-all" />
+                  <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-yellow-500 group-hover:translate-x-0.5 transition-all" />
                 </div>
               </div>
             ))}

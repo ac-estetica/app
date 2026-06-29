@@ -14,7 +14,7 @@ export default function PacotesPage() {
       {/* Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Pacotes Cadastrados", value: mockPackages.length, icon: Package, color: "text-pink-600", bg: "bg-pink-50" },
+          { label: "Pacotes Cadastrados", value: mockPackages.length, icon: Package, color: "text-yellow-700", bg: "bg-yellow-50" },
           { label: "Pacotes Ativos (Clientes)", value: mockClientPackages.filter(p => p.status === "active").length, icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
           { label: "Receita de Pacotes", value: formatCurrency(mockClientPackages.reduce((s, p) => s + p.totalValue, 0)), icon: DollarSign, color: "text-blue-600", bg: "bg-blue-50" },
           { label: "Vencendo em 30 dias", value: 2, icon: Calendar, color: "text-orange-600", bg: "bg-orange-50" },
@@ -46,7 +46,7 @@ export default function PacotesPage() {
             ))}
           </div>
           <button onClick={() => setModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
             <Plus className="w-4 h-4" /> {activeTab === "packages" ? "Novo Pacote" : "Vender Pacote"}
           </button>
         </div>
@@ -55,8 +55,8 @@ export default function PacotesPage() {
           {activeTab === "packages" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {mockPackages.map((pkg) => (
-                <div key={pkg.id} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md hover:border-pink-200 transition-all">
-                  <div className="h-1.5 bg-gradient-to-r from-pink-500 to-rose-500" />
+                <div key={pkg.id} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md hover:border-yellow-300 transition-all">
+                  <div className="h-1.5 bg-gradient-to-r from-yellow-500 to-amber-500" />
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -94,7 +94,7 @@ export default function PacotesPage() {
                       ))}
                     </div>
 
-                    <button className="w-full py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-pink-500/20 hover:from-pink-700 hover:to-rose-700 transition-all">
+                    <button className="w-full py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-yellow-500/20 hover:from-yellow-700 hover:to-amber-900 transition-all">
                       Vender Pacote
                     </button>
                   </div>
@@ -111,9 +111,9 @@ export default function PacotesPage() {
                 const daysLeft = Math.ceil((new Date(cp.expirationDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24));
 
                 return (
-                  <div key={cp.id} className="border border-gray-100 rounded-2xl p-4 hover:border-pink-200 hover:shadow-sm transition-all">
+                  <div key={cp.id} className="border border-gray-100 rounded-2xl p-4 hover:border-yellow-300 hover:shadow-sm transition-all">
                     <div className="flex items-start gap-4 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white font-bold flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-900 flex items-center justify-center text-white font-bold flex-shrink-0">
                         {client?.name[0] || "?"}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -151,7 +151,7 @@ export default function PacotesPage() {
                         <span>{cp.completedSessions}/{cp.totalSessions} sessões ({progressPct.toFixed(0)}%)</span>
                       </div>
                       <div className="h-2 bg-gray-100 rounded-full">
-                        <div className="h-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 transition-all" style={{ width: `${progressPct}%` }} />
+                        <div className="h-2 rounded-full bg-gradient-to-r from-yellow-500 to-amber-500 transition-all" style={{ width: `${progressPct}%` }} />
                       </div>
                     </div>
 

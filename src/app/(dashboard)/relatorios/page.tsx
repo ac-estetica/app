@@ -16,7 +16,7 @@ const reportTypes = [
   { id: "clients", label: "Clientes", icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
   { id: "appointments", label: "Atendimentos", icon: Calendar, color: "text-violet-600", bg: "bg-violet-50" },
   { id: "packages", label: "Pacotes", icon: Package, color: "text-amber-600", bg: "bg-amber-50" },
-  { id: "professionals", label: "Profissionais", icon: TrendingUp, color: "text-pink-600", bg: "bg-pink-50" },
+  { id: "professionals", label: "Profissionais", icon: TrendingUp, color: "text-yellow-700", bg: "bg-yellow-50" },
   { id: "services", label: "Serviços", icon: BarChart3, color: "text-indigo-600", bg: "bg-indigo-50" },
 ];
 
@@ -47,7 +47,7 @@ export default function RelatoriosPage() {
                 </button>
               ))}
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
               <Download className="w-4 h-4" /> Exportar PDF
             </button>
             <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-50 transition-colors">
@@ -65,14 +65,14 @@ export default function RelatoriosPage() {
             onClick={() => setActiveReport(id)}
             className={`p-4 rounded-2xl border-2 transition-all text-center ${
               activeReport === id
-                ? "border-pink-400 bg-pink-50 shadow-md"
+                ? "border-yellow-400 bg-yellow-50 shadow-md"
                 : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm"
             }`}
           >
             <div className={`w-10 h-10 ${bg} rounded-xl flex items-center justify-center mx-auto mb-2`}>
               <Icon className={`w-5 h-5 ${color}`} />
             </div>
-            <p className={`text-xs font-bold ${activeReport === id ? "text-pink-600" : "text-gray-600"}`}>
+            <p className={`text-xs font-bold ${activeReport === id ? "text-yellow-700" : "text-gray-600"}`}>
               {label}
             </p>
           </button>

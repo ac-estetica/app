@@ -15,7 +15,7 @@ export default function ProfissionaisPage() {
       {/* Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Total Profissionais", value: mockProfessionals.length, icon: UserCog, color: "text-pink-600", bg: "bg-pink-50" },
+          { label: "Total Profissionais", value: mockProfessionals.length, icon: UserCog, color: "text-yellow-700", bg: "bg-yellow-50" },
           { label: "Ativas", value: mockProfessionals.filter(p => p.active).length, icon: Star, color: "text-green-600", bg: "bg-green-50" },
           { label: "Comissões do Mês", value: formatCurrency(profRanking.reduce((s, p) => s + p.commission, 0)), icon: DollarSign, color: "text-blue-600", bg: "bg-blue-50" },
           { label: "Atendimentos do Mês", value: profRanking.reduce((s, p) => s + p.appointments, 0), icon: Calendar, color: "text-violet-600", bg: "bg-violet-50" },
@@ -40,7 +40,7 @@ export default function ProfissionaisPage() {
             <p className="text-gray-400 text-sm">{mockProfessionals.length} profissional(is)</p>
           </div>
           <button onClick={() => setModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-sm font-semibold hover:from-pink-700 hover:to-rose-700 transition-all shadow-md shadow-pink-500/20">
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white rounded-xl text-sm font-semibold hover:from-yellow-700 hover:to-amber-900 transition-all shadow-md shadow-yellow-500/20">
             <Plus className="w-4 h-4" /> Nova Profissional
           </button>
         </div>
@@ -49,7 +49,7 @@ export default function ProfissionaisPage() {
           {mockProfessionals.map((prof) => {
             const rank = profRanking.find(r => r.professionalId === prof.id);
             return (
-              <div key={prof.id} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md hover:border-pink-200 transition-all cursor-pointer group">
+              <div key={prof.id} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md hover:border-yellow-300 transition-all cursor-pointer group">
                 {/* Header */}
                 <div className="h-20 relative" style={{ background: `linear-gradient(135deg, ${prof.color}22, ${prof.color}11)` }}>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -115,7 +115,7 @@ export default function ProfissionaisPage() {
                       style={{ backgroundColor: prof.color }}
                       title="Cor na agenda"
                     />
-                    <button className="text-xs font-semibold text-pink-600 hover:text-pink-700 flex items-center gap-1 transition-colors">
+                    <button className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 flex items-center gap-1 transition-colors">
                       Ver detalhes <ChevronRight className="w-3 h-3" />
                     </button>
                   </div>

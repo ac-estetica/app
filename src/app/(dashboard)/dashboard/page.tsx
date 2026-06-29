@@ -82,9 +82,9 @@ const kpiCards = [
     change: `${mockDashboardData.appointments.inProgress} em atendimento`,
     positive: true,
     icon: Calendar,
-    color: "from-pink-500 to-rose-500",
-    bg: "bg-pink-50",
-    iconColor: "text-pink-600",
+    color: "from-yellow-500 to-amber-500",
+    bg: "bg-yellow-50",
+    iconColor: "text-yellow-700",
     sub: `Faltas: ${mockDashboardData.appointments.absenceRate}%`,
   },
   {
@@ -104,7 +104,7 @@ const kpiCards = [
     change: "1 em atraso",
     positive: false,
     icon: AlertCircle,
-    color: "from-red-500 to-rose-500",
+    color: "from-red-500 to-amber-900",
     bg: "bg-red-50",
     iconColor: "text-red-600",
     sub: "Ação necessária",
@@ -150,38 +150,38 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* Welcome banner */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-rose-950 via-pink-900 to-rose-800 rounded-2xl p-6 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 rounded-2xl p-6 text-white">
         <div className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
         <div className="absolute -right-8 -top-8 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
-        <div className="absolute -right-4 bottom-0 w-64 h-24 bg-pink-400/10 rounded-full blur-2xl" />
+        <div className="absolute -right-4 bottom-0 w-64 h-24 bg-yellow-400/10 rounded-full blur-2xl" />
         <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <p className="text-pink-200 text-sm font-medium mb-1">
+            <p className="text-yellow-200 text-sm font-medium mb-1">
               {today.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
             </p>
             <h1 className="text-2xl md:text-3xl font-bold">
               Olá, Ana Claudia! 👋
             </h1>
-            <p className="text-pink-200 mt-1.5 text-sm">
+            <p className="text-yellow-200 mt-1.5 text-sm">
               Você tem <span className="font-bold text-white">{mockDashboardData.appointments.today} agendamentos</span> hoje e{" "}
               <span className="font-bold text-white">{mockDashboardData.financial.dailyRevenue.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span> em faturamento.
             </p>
           </div>
           <div className="flex gap-3">
             <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 text-center border border-white/10">
-              <p className="text-pink-200 text-[10px] uppercase font-bold tracking-wide">Realizados</p>
+              <p className="text-yellow-200 text-[10px] uppercase font-bold tracking-wide">Realizados</p>
               <p className="text-white text-2xl font-bold">{mockDashboardData.appointments.completed}</p>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 text-center border border-white/10">
-              <p className="text-pink-200 text-[10px] uppercase font-bold tracking-wide">Em Andamento</p>
+              <p className="text-yellow-200 text-[10px] uppercase font-bold tracking-wide">Em Andamento</p>
               <p className="text-white text-2xl font-bold">{mockDashboardData.appointments.inProgress}</p>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 text-center border border-white/10">
-              <p className="text-pink-200 text-[10px] uppercase font-bold tracking-wide">A Realizar</p>
+              <p className="text-yellow-200 text-[10px] uppercase font-bold tracking-wide">A Realizar</p>
               <p className="text-white text-2xl font-bold">{mockDashboardData.appointments.upcoming.length}</p>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function DashboardPage() {
               <p className="text-gray-400 text-xs mt-0.5">Últimos 6 meses</p>
             </div>
             <div className="flex items-center gap-3 text-xs">
-              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-pink-500 inline-block" />Receita</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" />Receita</span>
               <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-red-400 inline-block" />Despesas</span>
               <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />Lucro</span>
             </div>
@@ -366,7 +366,7 @@ export default function DashboardPage() {
             </div>
             <a
               href="/agenda"
-              className="text-xs font-semibold text-pink-600 hover:text-pink-700 flex items-center gap-1 transition-colors"
+              className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 flex items-center gap-1 transition-colors"
             >
               Ver agenda
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -428,7 +428,7 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-1 mt-0.5">
                       <div className="flex-1 bg-gray-100 rounded-full h-1">
                         <div
-                          className="h-1 rounded-full bg-gradient-to-r from-pink-500 to-rose-500"
+                          className="h-1 rounded-full bg-gradient-to-r from-yellow-500 to-amber-500"
                           style={{ width: `${(prof.revenue / 28560) * 100}%` }}
                         />
                       </div>
@@ -446,7 +446,7 @@ export default function DashboardPage() {
           <div className="bg-white rounded-2xl border border-gray-100 p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-bold text-gray-900 text-sm">Top Serviços</h3>
-              <CheckCircle2 className="w-4 h-4 text-pink-500" />
+              <CheckCircle2 className="w-4 h-4 text-yellow-500" />
             </div>
             <div className="space-y-2.5">
               {mockDashboardData.services.topSelling.slice(0, 4).map((service, idx) => (
@@ -457,7 +457,7 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-1 mt-0.5">
                       <div className="flex-1 bg-gray-100 rounded-full h-1">
                         <div
-                          className="h-1 rounded-full bg-gradient-to-r from-pink-400 to-rose-500"
+                          className="h-1 rounded-full bg-gradient-to-r from-yellow-500 to-amber-900"
                           style={{ width: `${(service.count / 87) * 100}%` }}
                         />
                       </div>
@@ -471,20 +471,20 @@ export default function DashboardPage() {
 
           {/* Birthdays this month */}
           {birthdayClients.length > 0 && (
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl border border-pink-100 p-4">
+            <div className="bg-gradient-to-br from-yellow-500 to-amber-900 rounded-2xl border border-yellow-200 p-4">
               <div className="flex items-center gap-2 mb-3">
-                <Gift className="w-4 h-4 text-pink-500" />
+                <Gift className="w-4 h-4 text-yellow-500" />
                 <h3 className="font-bold text-gray-900 text-sm">Aniversariantes</h3>
               </div>
               <div className="space-y-2">
                 {birthdayClients.map((client) => (
                   <div key={client.id} className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-full bg-pink-500 flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-7 h-7 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs font-bold">
                       {client.name[0]}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-semibold text-gray-800 truncate">{client.name}</p>
-                      <p className="text-[10px] text-pink-500">
+                      <p className="text-[10px] text-yellow-500">
                         {new Date(client.birthDate).toLocaleDateString("pt-BR", { day: "numeric", month: "long" })}
                       </p>
                     </div>
